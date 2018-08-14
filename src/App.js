@@ -8,10 +8,32 @@ import HeaderComponent from "./Components/HeaderComponent";
 class App extends Component {
     state = {data: []};
 
+
     handleDataAdded = (p) => {
-        data.push(p);
-        this.setState({});
-    };
+        console.log(p);
+        fetch('/users/data', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({p})
+            // body: JSON.stringify({
+            //     title: "title", descript: "descr",
+            //     lang: "kieli",
+            //     code: "code",
+            //     author: "author",
+            //     tags: "tags"
+            })
+            .then(res => {
+                    return res.json();
+
+                }).then(data => {
+                    console.log(JSON.stringify(data))
+                })
+        };
+
+
 
     componentDidMount() {
         let thisThis = this;
