@@ -31,7 +31,7 @@ class App extends Component {
 
     render() {
         return (
-            <div>
+            <div id="content">
                 <h1>RestMyCode_3.0</h1>
                 <DataList data={this.state.data}/>
             </div>
