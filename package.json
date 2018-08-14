@@ -13,5 +13,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "mongodb://<dbuser>:<dbpassword>@ds129459.mlab.com:29459/heroku_gb6159f8"
+  "proxy": "http://localhost:3300"
 }

@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import DataList from "./Components/DataList";
 
 class App extends Component {
+
     componentDidMount () {
         let itse = this;
-        fetch('/mega/citi/Espoo')
+        fetch('/')
             .then((result) => {
                 return result.json()
             })
@@ -15,14 +17,8 @@ class App extends Component {
     }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+          <DataList />
       </div>
     );
   }
