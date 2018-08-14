@@ -44,7 +44,7 @@ class DataList extends Component {
             <Data key={data._id} data={data}/>
         );
         return (
-            <table id="datalist">
+            <table id="data">
                 <thead>
                 <tr>
                     <th>Id</th>
