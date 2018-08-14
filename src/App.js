@@ -3,6 +3,16 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+    componentDidMount () {
+        let itse = this;
+        fetch('/mega/citi/Espoo')
+            .then((result) => {
+                return result.json()
+            })
+            .then((saa) => {
+                itse.setState({saa: saa})
+            });
+    }
   render() {
     return (
       <div className="App">
