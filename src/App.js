@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import './App.css';
 import DataList from "./Components/DataList";
 import DataForm from "./Components/DataForm";
+import HeaderComponent from "./Components/HeaderComponent";
+// import Chat from "./Components/Chat";
 
 class App extends Component {
     state = {data: []};
@@ -24,13 +26,23 @@ class App extends Component {
 
     };
 
+        deleteData = (objectId) => {
+        fetch('/users/deletedata/' + objectId, {
+            method: 'DELETE'
+        })
+            .then(resp => {
+                console.log("the list after deletion", resp);
+                this.componentDidMount();
+
+            });
+    };
+
     render() {
         return (
             <div id="content">
-                <h1>RestMyCode_3.0</h1>
-                <DataList data={this.state.data}/>
+                <HeaderComponent/>
+                <DataList data={this.state.data} deleteData={this.deleteData}/>
                 <DataForm tiedot={this.state.data} addData={this.handleDataAdded}/>
-
             </div>
         );
     }

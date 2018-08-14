@@ -51,6 +51,9 @@
 }
 
 #content {
-  width: 400px;
   margin: 0 auto;
+}
+
+h1 {
+  font-family: "Rubik Mono One";
 }
