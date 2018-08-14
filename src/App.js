@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 import DataList from "./Components/DataList";
+import HeaderComponent from "./Components/HeaderComponent";
+// import Chat from "./Components/Chat";
 
 class App extends Component {
     state = {data: []};
@@ -19,7 +21,7 @@ class App extends Component {
     };
 
         deleteData = (objectId) => {
-        fetch('/deletedata/' + objectId, {
+        fetch('/users/deletedata/' + objectId, {
             method: 'DELETE'
         })
             .then(resp => {
@@ -32,8 +34,8 @@ class App extends Component {
     render() {
         return (
             <div id="content">
-                <h1>RestMyCode_3.0</h1>
-                <DataList data={this.state.data}/>
+                <HeaderComponent/>
+                <DataList data={this.state.data} deleteData={this.deleteData}/>
             </div>
         );
     }
