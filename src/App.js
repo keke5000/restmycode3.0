@@ -50,7 +50,7 @@ class App extends Component {
 
     componentDidMount() {
         let thisThis = this;
-        fetch('/osoite')
+        fetch('/users')
             .then((resp) => {
                 return resp.json();
             })

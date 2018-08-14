@@ -41,7 +41,7 @@ class DataList extends Component {
     render() {
         // const deleteData = this.props.deleteData;
         var datalist = this.props.data.map(data =>
-            <Data key={data.id} data={data}/>
+            <Data key={data._id} data={data}/>
         );
         return (
             <table id="datalist">
