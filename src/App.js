@@ -3,6 +3,7 @@ import './App.css';
 import DataList from "./Components/DataList";
 import DataForm from "./Components/DataForm";
 import HeaderComponent from "./Components/HeaderComponent";
+
 // import Chat from "./Components/Chat";
 
 class App extends Component {
@@ -17,22 +18,20 @@ class App extends Component {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({p})
+            body: JSON.stringify(p)
             // body: JSON.stringify({
             //     title: "title", descript: "descr",
             //     lang: "kieli",
             //     code: "code",
             //     author: "author",
             //     tags: "tags"
-            })
+        })
             .then(res => {
-                    return res.json();
-
-                }).then(data => {
-                    console.log(JSON.stringify(data))
-                })
-        };
-
+                // return res.json();
+                alert("Code added!");
+                this.componentDidMount();
+            })
+    };
 
 
     componentDidMount() {
@@ -48,7 +47,7 @@ class App extends Component {
 
     };
 
-        deleteData = (objectId) => {
+    deleteData = (objectId) => {
         fetch('/users/deletedata/' + objectId, {
             method: 'DELETE'
         })
