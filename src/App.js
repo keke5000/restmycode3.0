@@ -28,7 +28,7 @@ class App extends Component {
         })
             .then(res => {
                 // return res.json();
-                alert("Code added!");
+                // alert("Code added!");
                 this.componentDidMount();
             })
     };
