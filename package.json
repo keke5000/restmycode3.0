@@ -16,4 +16,3 @@
   },
   "proxy": "http://localhost:3003"
 }
-//  "proxy": "mongodb://heroku_gb6159f8:5056oepv3ed5k74s1nuej8f0na@ds129459.mlab.com:29459/heroku_gb6159f8"

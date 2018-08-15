@@ -17,7 +17,7 @@ class App extends Component {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({p})
+            body: JSON.stringify(p)
             // body: JSON.stringify({
             //     title: "title", descript: "descr",
             //     lang: "kieli",
@@ -27,13 +27,10 @@ class App extends Component {
             })
             .then(res => {
                     return res.json();
-
                 }).then(data => {
                     console.log(JSON.stringify(data))
                 })
         };
-
-
 
     componentDidMount() {
         let thisThis = this;
