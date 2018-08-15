@@ -3,6 +3,7 @@ import './App.css';
 import DataList from "./Components/DataList";
 import DataForm from "./Components/DataForm";
 import HeaderComponent from "./Components/HeaderComponent";
+
 // import Chat from "./Components/Chat";
 
 class App extends Component {
@@ -24,14 +25,14 @@ class App extends Component {
             //     code: "code",
             //     author: "author",
             //     tags: "tags"
-            })
+        })
             .then(res => {
-                    return res.json();
-                }).then(data => {
-                    console.log(JSON.stringify(data))
-                })
-        };
-
+                // return res.json();
+                alert("Code added!");
+                this.componentDidMount();
+            })
+    };
+    
     componentDidMount() {
         let thisThis = this;
         fetch('/users')
@@ -45,7 +46,7 @@ class App extends Component {
 
     };
 
-        deleteData = (objectId) => {
+    deleteData = (objectId) => {
         fetch('/users/deletedata/' + objectId, {
             method: 'DELETE'
         })
