@@ -4,9 +4,10 @@ import Data from "./Data";
 
 class DataList extends Component {
     render() {
-         const deleteData = this.props.deleteData;
+        const updateData = this.props.updateData;
+        const deleteData = this.props.deleteData;
         var datalist = this.props.data.map(data =>
-            <Data key={data._id} data={data} deleteData={deleteData}/>
+            <Data key={data._id} data={data} updateData={updateData} deleteData={deleteData}/>
         );
         return (
             <table id="data">
@@ -21,6 +22,7 @@ class DataList extends Component {
                     <th>Score</th>
                     <th>Code</th>
                     <th>Author</th>
+                    <th><em>UPDATE</em></th>
                     <th><em>DELETE</em></th>
                 </tr>
                 </thead>

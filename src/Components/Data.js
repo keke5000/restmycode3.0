@@ -2,9 +2,14 @@ import React, {Component} from 'react';
 
 class Data extends Component {
     handleDeleteClick = (e) => {
-        alert("POISTIT TIETOKENTÄN");
+        alert("POISTIT TIETOKENTÄN PERKELE!L!!");
         e.preventDefault();
         this.props.deleteData(this.props.data._id);
+    };
+
+    handleUpdateClick = (e) => {
+        e.preventDefault();
+        this.props.updateData(this.props.data._id);
     };
 
     render() {
@@ -19,6 +24,7 @@ class Data extends Component {
                 <td>{this.props.data.score}</td>
                 <td className="codeid">{this.props.data.code}</td>
                 <td>{this.props.data.author}</td>
+                <td><a href="" onClick={this.handleUpdateClick}>Update</a></td>
                 <td><a href="" onClick={this.handleDeleteClick}>Delete</a></td>
             </tr>
         )
